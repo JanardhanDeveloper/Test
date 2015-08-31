@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="css/registration.css">
+</head>
+<body>
+<h1 class="register-title">Welcome</h1>
+<form class="register" name="myForm">
+    <div class="register-switch">
+        <input type="radio" name="sex" value="F" id="sex_f" class="register-switch-input" checked>
+        <label for="sex_f" class="register-switch-label">Female</label>
+        <input type="radio" name="sex" value="M" id="sex_m" class="register-switch-input">
+        <label for="sex_m" class="register-switch-label">Male</label>
+    </div>
+
+
+    <input type="text" id="email" name="email" class="register-input" placeholder="Email address"/>
+    <input type="password" id="password" name="password" class="register-input" placeholder="Password"/>
+   
+
+    <select name="City" id="demo">
+        <option value="1">Atlanta</option>
+        <option value="2">Berlin</option>
+    </select>
+
+
+    <input type="button"  value="Create Account" class="register-button" onclick="validationcheck();"/>
+
+
+</form>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/register.js"></script>
+<script type="text/javascript" src="js/jquery.mobile.js"></script>
+<script type="text/javascript">
+    function validationcheck()
+    {
+      if(document.myForm.email.value == "")
+      {
+            alert("Please Enter Email.");
+      }
+      else if(document.myForm.password.value == "")
+      {
+        alert("Please Enter Password.");
+      }
+      else if(document.myForm.demo.value == "")
+      {
+        alert("Please select Dropdown Value.");
+      }
+      else
+      {
+        success();
+      }
+    }
+
+    function success()
+    {
+       onDeviceReady();
+    }
+
+</script>
+</body>
+</html>
